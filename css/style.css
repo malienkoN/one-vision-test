@@ -1,0 +1,144 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1230px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section {
+    margin-top: 30px;
+}
+
+.table {
+    border: 1px solid black;
+    text-align: center;
+}
+
+.table__first {
+    display: grid;
+    grid-template-columns: 150px 1fr 150px;
+    border-bottom: 1px solid cadetblue;
+    align-items: start;
+}
+
+.table__first-item {
+    border-right: 1px solid cadetblue;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table__first-item:last-child {
+    border-right: none;
+}
+
+.table__second {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+}
+
+.table__second-inner {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table__second-item__inner {
+    display: flex;
+}
+
+.table__second-item {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table__second-item--special {
+    height: 150px;
+    border-right: 1px solid cadetblue;
+}
+
+.table__second-item__inner {
+    border-bottom: 1px solid cadetblue;
+}
+
+.table__second-item__inner-child__first {
+    width: 60%;
+    border-right: 1px solid cadetblue;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table__second-item__inner-child__second {
+    width: 40%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 1023px) {
+    .table__first-item:last-child {
+        display: none;
+    }
+
+    .table__first {
+        grid-template-columns: 150px 1fr;
+    }
+
+    .table__first-item:nth-child(2) {
+        border-right: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .table__first-item:last-child {
+        display: flex;
+        border-bottom: none;
+    }
+
+    .table__first {
+        grid-template-columns: 1fr;
+    }
+
+    .table__second {
+        grid-template-columns: 1fr;
+    }
+
+    .table__first-item {
+        border-right: 0;
+        border-bottom: 1px solid cadetblue;
+    }
+
+    .table__second-item--special {
+        border-right: none;
+        border-bottom: 1px solid cadetblue;
+    }
+}
